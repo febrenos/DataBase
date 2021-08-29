@@ -9,7 +9,7 @@ for each situations kinds use one this(dml,ddl...) but you can merge commands
 - DDL Data Definition Language
 - DML Data Manipulation Language
 - DQL Query Language
-
+-
 - DCL      Data Control Language
 - DTL/TCL  Data Transaction Language/
           Transition control language
