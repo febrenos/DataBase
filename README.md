@@ -3,21 +3,20 @@
 Is usege for admnistrate informantions, is where informations are stored  
 
 #### KINDS
-for each situations kinds use one this(dml,ddl...) but you can merge
+for each situations kinds use one this(dml,ddl...) but you can merge commands
 
-##### More used
+##### More used / Less used
 - DDL Data Definition Language
 - DML Data Manipulation Language
 - DQL Query Language
 
-##### Less used
--DCL      Data Control Language
--DTL/TCL  Data Transaction Language/
+- DCL      Data Control Language
+- DTL/TCL  Data Transaction Language/
           Transition control language
 
 
 #### DDL
-Create table for after you can increment 
+Create tables, define table obj for after you can increment in dml
 | Commands | Description |
 | --- | --- |
 | CREATE | create a new table or database |
@@ -25,15 +24,48 @@ Create table for after you can increment
 | DROP | drop a table |
 | RENAME | change name table |
 
+- ALTER SEQUENCE
+- CREATE PROCEDURE
+- DROP INDEX
+- ALTER SESSION
+- CREATE SCHEMA
+- DROP JAVA
+- ALTE R TABLE
+- CREATE SEQUENCE
+- DROP PROCEDURE
+- ALTER TRIGGER
+- CREATE SYNONYM
+- DROP SCHEMA
+- ALTER USER
+- GRANT
+- DROP SEQUENCE
+- ALTER VIEW
+- REVOKE
+- DROP SYNONYM
+- CREATE DATABASE
+- CREATE TABLE
+- DROP TABLE
+- CREATE FUNCTION
+- CREATE TRIGGER
+- DROP TRIGGER
+- CREATE GLOBAL TEMPORARY TABLE
+- CREATE USER
+- DROP USER
+- CREATE INDEX
+- CREATE VIEW
+- DROP VIEW
+- CREATE JAVA
+- DROP FUNCTION
+- TRUNCATE TABLE
+
+
+
 examples:
 ```sql
 
 ```
 #### DML
 Increment information
-INSERT to insert a new row.
-UPDATE to update an existing row.
-DELETE to delete a row.
 MERGE for merging two rows or two tables.
 | Commands | Descriptio |
 | ---- | ---- |
@@ -63,7 +95,9 @@ SELECT * FROM TableName
 manage security control
 | Commands | Descriptio |
 | ---- | ---- |
-|  |  |
+| COMMIT | permanently save |
+| ROLLBACK | undo the change |
+| SAVEPOINT | save temporarily |
 
 examples:
 ```sql
