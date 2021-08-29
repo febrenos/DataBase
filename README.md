@@ -6,7 +6,6 @@ Is usege for admnistrate informantions, is where informations are stored
 for each situations kinds use one this but you can merge
 
 ##### More used
-- [x] test
 - DDL Data Definition Language
 - DML Data Manipulation Language
 - DQL Query Language
@@ -18,6 +17,11 @@ for each situations kinds use one this but you can merge
 
 
 #### DDL
+| Commands | Description |
+| --- | --- |
+| INSERT | Lista de todos os arquivos modificados ou novos |
+| DELETE | Mostra as diferenças do arquivo que não foram preparadas |
+| UPDATE | |
 Create table for after you can increment 
 ```sql
 
@@ -28,6 +32,9 @@ Increment information
 
 ```
 #### DQL
+| Commands | Descriptio |
+| ---- | ---- |
+|  |  |
 is for consult, show data
 ```sql
 SELECT * FROM TableName
@@ -36,11 +43,19 @@ SELECT * FROM TableName
 
 
 #### DCL
+| Commands | Descriptio |
+| ---- | ---- |
+|  |  |
 manage security control
 ```sql
 
 ```
 #### DTL/TCL
+| Commands | Descriptio |
+| ---- | ---- |
+|  BEGIN TRANSACTION|  |
+| COMMIT |  |
+| ROLLBACK |  |
 Control informations transations
 ```sql
 
