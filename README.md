@@ -8,40 +8,30 @@ for each situations kinds use one this(dml,ddl...) but you can merge commands
 #### Conditions
 | Conditions | Description |
 | --- | --- |
-| DISTINCT |  |
-| NULL |  |
-| NOT NULL |  |
-| and |  |
-| or |  |
-| like |  |
-| = |  |
-| > |  |
-| < |  |
-| >= |  |
-| <= |  |
+| DISTINCT | list without equality |
+| NULL | without value |
+| NOT NULL | with value |
+| and | add more argument |
+| or | conditional or one or other |
+| like | 'x%'text in start '%x'text in end |
+| = | exacly that |
+| > | bigger |
+| < | smaller |
+| >= | smaller, equality |
+| <= | bigger, equality |
 | () | pass list or execute with priority |
-| in(x,x,x) |  |
-| in |  |
+| in(x,x,x) | list |
+| in | inside |
 
 
 ##### More used / Less used
 - DDL Data Definition Language
 - DML Data Manipulation Language
-- DQL Query Language
+- DQL Data Query Language
 -
 - DCL      Data Control Language
 - DTL/TCL  Data Transaction Language/
-          Transition control language
-
-
-#### DDL
-Create tables, define table obj for after you can increment in dml
-| Commands | Description |
-| --- | --- |
-| CREATE | create a new table or database |
-| ALTER | truncate to delete data from the table |
-| DROP | drop a table |
-| RENAME | change name table |
+           Transition control language
 
 - ALTER TABLE
 - ALTER SESSION
@@ -77,9 +67,42 @@ Create tables, define table obj for after you can increment in dml
 - TRUNCATE TABLE
 - ALTER SEQUENCE
 
+#### DDL
+Create tables, define table obj for after you can increment in dml
+| Commands | Description |
+| --- | --- |
+| CREATE | create a new table or database |
+| ALTER | truncate to delete data from the table |
+| DROP | drop a table |
+| RENAME | change name table |
+
+INTEGER	Um valor inteiro com sinal
+| DECIMAL(p,q) | Um número decimal de p dígitos, dos quais q são casas decimais |
+| FLOAT(p) | Um valor real com precisão p |
+| CHARACTER(n) | Uma string de exatamente n caracteres |
+| BIT(n) | Uma seqüência de exatamente n valores booleanos (true/false) |
+| DATE | Uma data, com subcampos YEAR, MONTH e DAY |
+| TIME | Um momento do dia, com subcampos HOUR, MINUTE e SECOND|
+| TIMESTAMP | Um "carimbo temporal" contendo uma data e momento específicos |
+
 examples:
 ```sql
- 
+//create the less influent to more influent
+ CREATE DATABASE DBName;
+ USE DBName;
+ CREATE TABLE TableName1(
+     IdTableName1   INT PRIMARY KEY IDNTITY,
+     Name           VARCHAR(200),
+     Date           DATE NOT NULL,
+     CPF            CHAR(11),
+     FEMALE         BIT NOT NULL
+);
+
+CRATE TABLE TableName2(
+     IdTableName2 INT PRIMARY KEY IDNTITY,
+     IdTableName1 INT FOREIGN KEY REFERENCES TableName1(IdTableName1),
+     Name VARCHAR(200)
+);
 ```
 #### DML
 Increment information
@@ -115,15 +138,17 @@ WHEN NOT MATCHED BY TARGET
          VALUES (d2.category_id, d2.category_name, d2.amount)
 WHEN NOT MATCHED BY SOURCE 
     THEN DELETE;
-
-
-
 ```
 #### DQL
 is for consult, show data
 | Commands | Descriptio |
 | ---- | ---- |
-|  |  |
+| SELECT | list tables, columns, values |
+| INNER JOIN | list the resemblance |
+| LEFT JOIN |  |
+| RIGHT JOIN |  |
+| FULL OUTER JOIN |  |
+
 
 examples:
 ```sql
@@ -142,9 +167,8 @@ WHERE tn.name = 'NameElementColumn'
 manage security control
 | Commands | Descriptio |
 | ---- | ---- |
-| COMMIT | permanently save |
-| ROLLBACK | undo the change |
-| SAVEPOINT | save temporarily |
+| GRANT | permanently save |
+| REVOKE | permanently save |
 
 examples:
 ```sql
@@ -154,13 +178,19 @@ examples:
 Control informations transations
 | Commands | Descriptio |
 | ---- | ---- |
-|  BEGIN TRANSACTION|  |
-| COMMIT |  |
-| ROLLBACK |  |
+| BEGIN TRANSACTION |  |
+| COMMIT | save changes |
+| SAVEPOINT | save temporarily |
+| ROLLBACK | back version |
+| BEGIN TRAN | start test execution |
+| ROLLBACK TRAN | finish test execution |
+
 
 examples:
 ```sql
-
+BEGIN TRAN
+//line code
+ROLLBACK TRAN
 ```
 
 Contents
