@@ -77,6 +77,7 @@ Create tables, define table obj for after you can increment in dml
 | RENAME | change name table |
 
 INTEGER	Um valor inteiro com sinal
+| --- | --- |
 | DECIMAL(p,q) | Um número decimal de p dígitos, dos quais q são casas decimais |
 | FLOAT(p) | Um valor real com precisão p |
 | CHARACTER(n) | Uma string de exatamente n caracteres |
