@@ -76,7 +76,7 @@ Create tables, define table obj for after you can increment in dml
 | DROP | drop a table |
 | RENAME | change name table |
 
-INTEGER	Um valor inteiro com sinal
+| INTEGER | Um valor inteiro com sinal |
 | --- | --- |
 | DECIMAL(p,q) | Um número decimal de p dígitos, dos quais q são casas decimais |
 | FLOAT(p) | Um valor real com precisão p |
@@ -88,7 +88,7 @@ INTEGER	Um valor inteiro com sinal
 
 examples:
 ```sql
-//create the less influent to more influent
+/*create the less influent to more influent*/
  CREATE DATABASE DBName;
  USE DBName;
  CREATE TABLE TableName1(
@@ -153,7 +153,7 @@ is for consult, show data
 
 examples:
 ```sql
-//DISTINCT for dont list duplication
+/*DISTINCT for dont list duplication*/
 SELECT DISTINCT * FROM TableName tn
 WHERE tn.name = 'NameElementColumn'
 
@@ -190,11 +190,14 @@ Control informations transations
 examples:
 ```sql
 BEGIN TRAN
-//line code
+/*line code*/
 ROLLBACK TRAN
 ```
 
 Contents
+<br /> 
 https://docs.oracle.com/cd/B14156_01/doc/B13812/html/sqcmd.htm
+<br /> 
 https://www.w3schools.com/sql/sql_delete.asp
+<br /> 
 https://www.dirceuresende.com/blog/sql-server-como-utilizar-o-comando-merge-para-inserir-atualizar-e-apagar-dados-com-apenas-1-comando/
