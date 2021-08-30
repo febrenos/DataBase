@@ -168,8 +168,8 @@ WHERE tn.name = 'NameElementColumn'
 manage security control
 | Commands | Descriptio |
 | ---- | ---- |
-| GRANT | permanently save |
-| REVOKE | permanently save |
+| GRANT | grant privileges |
+| REVOKE | turn back privileges |
 
 examples:
 ```sql
