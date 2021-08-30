@@ -5,8 +5,8 @@ Is usege for admnistrate informantions, is where informations are stored
 #### KINDS
 for each situations kinds use one this(dml,ddl...) but you can merge commands
 
-#### Conditions
-| Conditions | Description |
+#### syntax
+| syntax | Description |
 | --- | --- |
 | DISTINCT | list without equality |
 | NULL | without value |
