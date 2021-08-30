@@ -87,7 +87,7 @@ Create tables, define table obj for after you can increment in dml
 | TIMESTAMP | Um "carimbo temporal" contendo uma data e momento específicos |
 
 examples:
-```sql
+```sql server
 /*create the less influent to more influent*/
  CREATE DATABASE DBName;
  USE DBName;
