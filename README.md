@@ -76,18 +76,18 @@ Create tables, define table obj for after you can increment in dml
 | DROP | drop a table |
 | RENAME | change name table |
 
-| INTEGER | Um valor inteiro com sinal |
+| INTEGER | A signed integer value |
 | --- | --- |
-| DECIMAL(p,q) | Um número decimal de p dígitos, dos quais q são casas decimais |
-| FLOAT(p) | Um valor real com precisão p |
-| CHARACTER(n) | Uma string de exatamente n caracteres |
-| BIT(n) | Uma seqüência de exatamente n valores booleanos (true/false) |
-| DATE | Uma data, com subcampos YEAR, MONTH e DAY |
-| TIME | Um momento do dia, com subcampos HOUR, MINUTE e SECOND|
-| TIMESTAMP | Um "carimbo temporal" contendo uma data e momento específicos |
+| DECIMAL(p,q) | A decimal number of p digits, of which q are decimal places |
+| FLOAT(p) | A real value with precision p |
+| CHARACTER(n) | A string of exactly n characters |
+| BIT(n) | A string of exactly n boolean values ​​(true/false) |
+| DATE | A date, with subfields YEAR, MONTH and DAY |
+| TIME | A time of day, with HOUR, MINUTE and SECOND |
+| TIMESTAMP | A "time stamp" containing a specific date and time |
 
 examples:
-```sql server
+```sql
 /*create the less influent to more influent*/
  CREATE DATABASE DBName;
  USE DBName;
