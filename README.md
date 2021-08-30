@@ -118,7 +118,7 @@ Increment information
 
 examples:
 ```sql
-ISERT INTO TableName (column)
+INSERT INTO TableName (column)
 VALUES ('Fisrt'),('Second');
 
 UPDATE TableName
