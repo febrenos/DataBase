@@ -32,7 +32,7 @@ for each situations kinds use one this(dml,ddl...) but you can merge commands
 - DCL      Data Control Language
 - DTL/TCL  Data Transaction Language/
            Transition control language
-
+##### Commands
 - ALTER TABLE
 - ALTER SESSION
 - ALTER TRIGGER
