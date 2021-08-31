@@ -194,6 +194,187 @@ BEGIN TRAN
 ROLLBACK TRAN
 ```
 
+#### Cursor
+```sql
+/*Query for get null values and UPDATE*/
+/*open the the cursor*/
+OPEN cursor1;
+searchAppLayoselect * from events ev
+where ev.app_layout_id is null;
+
+select ev.id, ev.app_layout_id, ep.* from events ev
+inner join event_app_layouts ep on ep.id = ev.app_layout_id
+where ev.id in (
+'5158e44d-8176-44dc-8740-ab0a00ee7d10',
+'60468a11-2b06-470b-bca9-a9f40184b110',
+'638b0f1c-3755-4303-8f9e-a95f0120664b',
+'8e9b8453-7ec5-4d2e-af01-a9f40183f7d6',
+'ac4ba372-39c6-467c-8c6b-aad9014cf7cb',
+'be2799aa-4abc-4c89-a2ad-a9ee00037da4')
+
+/*Other File*/
+CALL eventAppLayoutsConfig();
+
+/*Other File*/
+DELIMITER $$
+DROP PROCEDURE IF EXISTS eventAppLayoutsConfig;
+CREATE PROCEDURE eventAppLayoutsConfig()
+BEGIN
+DECLARE foundedId,newAppLayoutId CHAR(36) DEFAULT "";
+DECLARE finish INTEGER DEFAULT 0; 
+
+DECLARE cursor1 CURSOR FOR SELECT DISTINCT ev.id FROM events ev WHERE ev.app_layout_id is null; 
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET finish = 1; 
+ut : LOOP
+    FETCH cursor1 INTO foundedId;
+    IF finish = 1 THEN
+        LEAVE searchAppLayout;
+    END IF;
+
+    SET newAppLayoutId = uuid();
+    INSERT INTO event_app_layouts
+    (id, 
+    table_layout,
+    background_image_id,
+    splash_screen_image_id,
+    banner_id,
+    alternative_theme_color,
+    favicon_image_id,
+    main_image_overlay_color,
+    main_image_overlay_opacity,
+    title_alignment,
+    logo_image_id)
+    VALUES
+    (newAppLayoutId, 1, null, null, null, '#8154A9', NULL, '#000000', '0', '2', null);
+
+    UPDATE events SET app_layout_id = newAppLayoutId where id = foundedId;
+
+END LOOP searchAppLayout;
+CLOSE cursor1;
+END$$;
+DELIMITER ;
+
+/*Query for*/
+DELIMITER $$
+DROP PROCEDURE IF EXISTS evmodules;
+CREATE PROCEDURE evmodules()
+BEGIN
+
+DECLARE finishedEvent  INTEGER DEFAULT 0;
+DECLARE generalCounter INT DEFAULT 0;
+DECLARE evId char(36) DEFAULT "";
+
+Block1: BEGIN
+
+DECLARE curEvents 
+		CURSOR FOR SELECT  DISTINCT ev.id FROM events ev inner join modules m on m.event_id = ev.id;       
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET finishedEvent = 1;
+        
+        OPEN curEvents;        
+        getEvent: LOOP        
+		FETCH curEvents INTO evId; 
+        IF finishedEvent = 1 THEN 
+			LEAVE getEvent;
+		END IF;       
+		
+        Block2: BEGIN       
+        
+        DECLARE finishedModule  INTEGER DEFAULT 0;
+        DECLARE  counter INT DEFAULT 0;
+        DECLARE moduleId char(36) DEFAULT "";
+        DECLARE curModules CURSOR FOR SELECT m.id FROM modules m WHERE m.event_id = evId order by m.info_id;
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET finishedModule = 1;
+        
+        SET counter:= 0;
+      
+        OPEN curModules;    
+        
+        getModule: LOOP
+        FETCH curModules INTO moduleId;   
+         IF finishedModule = 1 THEN 
+			LEAVE getModule;
+		END IF;
+        
+        UPDATE `selected_modules` 
+        SET module_id = moduleId, position = counter;
+        
+        SELECT CONCAT("contador: ",counter, " contador geral: ", generalCounter);
+              SET counter = counter + 1;
+              SET generalCounter = generalCounter + 1; 
+              
+        	END LOOP getModule;          
+            CLOSE curModules;             
+     
+        END Block2;     
+        
+        
+	END LOOP getEvent;
+            
+		CLOSE curEvents;
+        
+        END Block1;             
+END$$;
+DELIMITER ;
+
+/*Query for*/
+DELIMITER $$
+DROP PROCEDURE IF EXISTS appLayoutConfig;
+CREATE PROCEDURE appLayoutConfig()
+BEGIN
+
+DECLARE finishedSelectedModules INTEGER DEFAULT 0;
+DECLARE appLayoutId, moduleInfoId char(36) DEFAULT "";
+
+Block1: BEGIN
+
+DECLARE curSelectedModules CURSOR FOR SELECT DISTINCT sm.app_layout_id, sm.module_info_id FROM selected_modules sm;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET finishedSelectedModules = 1;
+
+OPEN curSelectedModules;
+getSelectedModules: LOOP
+FETCH curSelectedModules INTO appLayoutId, moduleInfoId;
+IF finishedSelectedModules = 1 THEN 
+			LEAVE getSelectedModules;
+		END IF;  
+
+ Block2: BEGIN
+
+DECLARE finishedModule  INTEGER DEFAULT 0;
+DECLARE moduleId char(36) DEFAULT "";
+DECLARE notUsedPosition int(11) DEFAULT 0;
+DECLARE  counter INT DEFAULT 0;
+
+DECLARE curModules CURSOR FOR SELECT DISTINCT m.id, sm2.position  FROM modules m 
+inner join events ev on ev.id = m.event_id
+inner join selected_modules sm2 on sm2.app_layout_id = ev.app_layout_id and sm2.module_info_id = m.info_id
+WHERE ev.app_layout_id = appLayoutId 
+ORDER BY sm2.position ASC;
+
+ DECLARE CONTINUE HANDLER FOR NOT FOUND SET finishedModule = 1;
+ 
+ OPEN curModules;
+ 
+ getModules: LOOP
+ FETCH curModules INTO moduleId, notUsedPosition;
+ IF finishedModule = 1 THEN 
+			LEAVE getModules;
+		END IF;
+        
+        INSERT INTO selected_modules (app_layout_id, module_info_id,position, module_id) VALUES(appLayoutId,moduleInfoId, counter,moduleId );
+        SET counter = counter + 1;
+ 
+ END LOOP getModules;          
+CLOSE curModules; 
+
+  END Block2; 
+END LOOP getSelectedModules;
+            
+		CLOSE curSelectedModules;
+END Block1;
+END$$;
+DELIMITER ;
+```
+
 Contents
 <br /> 
 https://docs.oracle.com/cd/B14156_01/doc/B13812/html/sqcmd.htm
