@@ -195,6 +195,7 @@ ROLLBACK TRAN
 ```
 
 #### Cursor
+https://github.com/felipesugisawa/DataBase/issues/1#issue-983850926
 ```sql
 /*Query for get null values and UPDATE*/
 /*open the the cursor*/
