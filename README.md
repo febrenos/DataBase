@@ -196,7 +196,7 @@ ROLLBACK TRAN
 #### Cursor
 
 <p align="center">
-  <img src="./images/cursor.png" width="750" title="hover text">
+  <img src="./images/cursor.png" width="450" title="hover text">
 </p>
 
 ```sql
