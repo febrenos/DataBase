@@ -154,17 +154,11 @@ is for consult, show data
   <img src="./images/sqljoins.png" width="750" title="hover text">
 </p>
 
-https://user-images.githubusercontent.com/54954812/131509486-abaa3a02-fc7b-4851-97ad-e7a068311919.png
-
 examples:
 ```sql
 /*DISTINCT for dont list duplication*/
 SELECT DISTINCT * FROM TableName tn
 WHERE tn.name = 'NameElementColumn'
-
-
-
-
 ```
 
 
@@ -201,7 +195,9 @@ ROLLBACK TRAN
 
 #### Cursor
 
-https://user-images.githubusercontent.com/54954812/131509491-2f895b98-5cbd-47e8-a3bf-a29c4472035f.png
+<p align="center">
+  <img src="./images/cursor.png" width="750" title="hover text">
+</p>
 
 ```sql
 /*Query for get null values and UPDATE*/
