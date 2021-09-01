@@ -81,7 +81,7 @@ Create tables, define table obj for after you can increment in dml
 | DECIMAL(p,q) | A decimal number of p digits, of which q are decimal places |
 | FLOAT(p) | A real value with precision p |
 | CHARACTER(n) | A string of exactly n characters |
-| BIT(n) | A string of exactly n boolean values ​​(true/false) |
+| BIT(n) | A string of exactly n boolean values (true/false) |
 | DATE | A date, with subfields YEAR, MONTH and DAY |
 | TIME | A time of day, with HOUR, MINUTE and SECOND |
 | TIMESTAMP | A "time stamp" containing a specific date and time |
@@ -149,6 +149,11 @@ is for consult, show data
 | LEFT JOIN |  |
 | RIGHT JOIN |  |
 | FULL OUTER JOIN |  |
+
+<p align="center">
+  <img src="./images/sqljoins.png" width="350" title="hover text">
+  [<img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">](url)
+</p>
 
 https://user-images.githubusercontent.com/54954812/131509486-abaa3a02-fc7b-4851-97ad-e7a068311919.png
 
