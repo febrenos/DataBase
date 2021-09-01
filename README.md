@@ -151,7 +151,7 @@ is for consult, show data
 | FULL OUTER JOIN |  |
 
 <p align="center">
-  <img src="./images/sqljoins.png" width="750" title="hover text">
+  <img src="./images/sqljoins.png" width="450" title="hover text">
 </p>
 
 examples:
