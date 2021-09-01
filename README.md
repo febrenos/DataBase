@@ -151,8 +151,7 @@ is for consult, show data
 | FULL OUTER JOIN |  |
 
 <p align="center">
-  <img src="./images/sqljoins.png" width="350" title="hover text">
-  [<img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">](url)
+  <img src="./images/sqljoins.png" width="750" title="hover text">
 </p>
 
 https://user-images.githubusercontent.com/54954812/131509486-abaa3a02-fc7b-4851-97ad-e7a068311919.png
