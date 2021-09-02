@@ -220,22 +220,28 @@ where ev.id in (
 CALL eventAppLayoutsConfig();
 
 /*Other File*/
+CALL eventAppLayoutsConfig();
+
 DELIMITER $$
 DROP PROCEDURE IF EXISTS eventAppLayoutsConfig;
 CREATE PROCEDURE eventAppLayoutsConfig()
+
 BEGIN
 DECLARE foundedId,newAppLayoutId CHAR(36) DEFAULT "";
 DECLARE finish INTEGER DEFAULT 0; 
 
 DECLARE cursor1 CURSOR FOR SELECT DISTINCT ev.id FROM events ev WHERE ev.app_layout_id is null; 
 DECLARE CONTINUE HANDLER FOR NOT FOUND SET finish = 1; 
-ut : LOOP
+
+searchAppLayout : LOOP
+
     FETCH cursor1 INTO foundedId;
     IF finish = 1 THEN
         LEAVE searchAppLayout;
     END IF;
 
     SET newAppLayoutId = uuid();
+    
     INSERT INTO event_app_layouts
     (id, 
     table_layout,
@@ -248,9 +254,9 @@ ut : LOOP
     main_image_overlay_opacity,
     title_alignment,
     logo_image_id)
+    
     VALUES
     (newAppLayoutId, 1, null, null, null, '#8154A9', NULL, '#000000', '0', '2', null);
-
     UPDATE events SET app_layout_id = newAppLayoutId where id = foundedId;
 
 END LOOP searchAppLayout;
