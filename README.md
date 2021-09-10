@@ -72,7 +72,7 @@ Create tables, define table obj for after you can increment in dml
 | Commands | Description |
 | --- | --- |
 | CREATE | create a new table or database |
-| ALTER | remove record, logs delete data from the table |
+| ALTER | delete data from the table |
 | DROP | remove table |
 | RENAME | change name table |
 
@@ -112,6 +112,7 @@ Increment information
 | INSERT | insert a new row |
 | UPDATE | update an existing row |
 | DELETE | delete a row |
+| TRUNCATE | remove record, logs, set values |
 | MERGE | merging two rows or two tables |
 - EXPLAIN PLAN | know execute process |
 - subquery::=
@@ -139,6 +140,9 @@ WHEN NOT MATCHED BY TARGET
          VALUES (d2.category_id, d2.category_name, d2.amount)
 WHEN NOT MATCHED BY SOURCE 
     THEN DELETE;
+    
+ALTER TABLE Persons
+DROP COLUMN DateOfBirth;
 ```
 #### DQL
 is for consult, show data
