@@ -72,8 +72,8 @@ Create tables, define table obj for after you can increment in dml
 | Commands | Description |
 | --- | --- |
 | CREATE | create a new table or database |
-| ALTER | truncate to delete data from the table |
-| DROP | drop a table |
+| ALTER | remove record, logs delete data from the table |
+| DROP | remove table |
 | RENAME | change name table |
 
 | INTEGER | A signed integer value |
