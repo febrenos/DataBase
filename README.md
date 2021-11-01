@@ -107,7 +107,7 @@ CRATE TABLE TableName2(
 ```
 #### DML
 Increment information
-| Commands | Descriptio |
+| Commands | Description |
 | ---- | ---- |
 | INSERT | insert a new row |
 | UPDATE | update an existing row |
