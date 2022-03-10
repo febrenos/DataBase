@@ -1,6 +1,14 @@
 # DATA BASE
 ## About DB
 Is usege for admnistrate informantions, is where informations are stored  
+Entidades,
+
+##Diagram(modeling)
+entity, relationships
+
+- Modelo conceitual
+- Modelo Lógico
+- Modelo Físico
 
 #### KINDS
 for each situations kinds use one this(dml,ddl...) but you can merge commands
