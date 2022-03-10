@@ -4,7 +4,7 @@ Is usege for admnistrate informantions, is where informations are stored
 Entidades,
 
 ##Diagram(modeling)
-entity, relationships, business rules
+entity, relationships, business rules, cardinalidade 1 - n
 
 "linking two entities will always have a verb" ~filosofic
 
