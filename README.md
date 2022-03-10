@@ -4,7 +4,9 @@ Is usege for admnistrate informantions, is where informations are stored
 Entidades,
 
 ##Diagram(modeling)
-entity, relationships
+entity, relationships, business rules
+
+"linking two entities will always have a verb" ~filosofic
 
 - Modelo conceitual
 - Modelo Lógico
