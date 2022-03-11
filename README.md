@@ -9,8 +9,17 @@ entity, relationships, business rules, cardinalidade 1 - n
 "linking two entities will always have a verb" ~filosofic
 
 - Modelo conceitual
+- <p align="center">
+  <img src="./images/conceitual.png" width="550" title="hover text">
+</p>
 - Modelo Lógico
+- <p align="center">
+  <img src="./images/logico.png" width="550" title="hover text">
+</p>
 - Modelo Físico
+- <p align="center">
+  <img src="./images/fisico.png" width="550" title="hover text">
+</p>
 
 #### KINDS
 for each situations kinds use one this(dml,ddl...) but you can merge commands
