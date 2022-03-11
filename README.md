@@ -7,19 +7,24 @@ Entidades,
 entity, relationships, business rules, cardinalidade 1 - n
 
 "linking two entities will always have a verb" ~filosofic
-
 <p align="center">
-  - Modelo conceitual
+  #### Modelo conceitual
+</p>
+<p align="center">
   <img src="./images/conceitual.PNG" width="550" title="hover text">
 </p>
 
 <p align="center">
-  - Modelo Lógico
+  #### Modelo Lógico
+</p>
+<p align="center">
   <img src="./images/logico.PNG" width="550" title="hover text">
 </p>
 
 <p align="center">
-  - Modelo Físico
+  #### Modelo Físico
+</p>
+<p align="center">
   <img src="./images/fisico.PNG" width="550" title="hover text">
 </p>
 
