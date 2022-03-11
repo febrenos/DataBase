@@ -32,8 +32,8 @@ entity, relationships, business rules, cardinalidade 1 - n
 #### KINDS
 for each situations kinds use one this(dml,ddl...) but you can merge commands
 
-#### syntax
-| syntax | Description |
+#### Syntax
+| Name | Description |
 | --- | --- |
 | DISTINCT | list without equality |
 | NULL | without value |
