@@ -10,15 +10,15 @@ entity, relationships, business rules, cardinalidade 1 - n
 
 - Modelo conceitual
 - <p align="center">
-  <img src="./images/conceitual.png" width="550" title="hover text">
+  <img src="./images/conceitual.PNG" width="550" title="hover text">
 </p>
 - Modelo Lógico
 - <p align="center">
-  <img src="./images/logico.png" width="550" title="hover text">
+  <img src="./images/logico.PNG" width="550" title="hover text">
 </p>
 - Modelo Físico
 - <p align="center">
-  <img src="./images/fisico.png" width="550" title="hover text">
+  <img src="./images/fisico.PNG" width="550" title="hover text">
 </p>
 
 #### KINDS
