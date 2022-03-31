@@ -4,7 +4,17 @@ Is usege for admnistrate informantions, is where informations are stored
 Entidades,
 
 ## Diagram(modeling)
-entity, relationships, business rules, cardinalidade 1 - n
+- entity
+- entity associative
+- primary key
+- primary key composed
+- relationships
+- business rules
+- cardinalidade 1 - n
+
+1,78
+precisao: 3
+escala: 2
 
 "linking two entities will always have a verb" ~filosofic
 
