@@ -11,6 +11,7 @@ Entidades,
 - relationships
 - business rules
 - cardinalidade 1 - n
+- chave primaria composta
 
 1,78
 precisao: 3
@@ -38,6 +39,24 @@ escala: 2
 <p align="center">
   <img src="./images/fisico.PNG" width="550" title="hover text">
 </p>
+#### Primeira Forma Normal (IFN)
+<div display=flex>
+<div>
+| CdNf(PK) | 1
+| --- |
+| CdVendedor |
+| NomeVenedor |
+| CdCliente |
+| NomeCliente |
+| ValorTotal |
+</div>
+<div>
+* | CdNf(FK) |
+| CdProduto(PK) |
+| --- |
+| NomeProduto |
+| ValorUnitarioProduto |</div>
+</div>
 
 #### KINDS
 for each situations kinds use one this(dml,ddl...) but you can merge commands
