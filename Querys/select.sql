@@ -1,3 +1,22 @@
+
+-- pipe || = and
+-- "" colunm title
+-- '' value in row
+-- , separa colunas
+-- || cocatena
+-- DISTINCTY rm duplicate
+-- ORDER BY DESC, ASC
+-- commit salva os dados
+-- SELECT TEXT FROM V$SQL; powers admnistrator see ALL querys runned
+SELECT * FROM tablins;
+SELECT nome FROM tablins;
+DESCRIBE tablins;
+--rotulo / alias / label / literal
+SELECT nome, salario, (salario + 100) * 12 "New Salary", TRUNC((salario + 100) / salario,4) || '%' 'Percent' FROM tablins;
+SELECT nome || '@fiap.com.br' "email" FROM tablins;
+SELECT DISTINCT gerente FROM tablins;
+SELECT nome, salario FROM tablins ORDER BY salario DESC, ASC
+
 SELECT * FROM EMP
 WHERE deptno = '10';
 /*finish with a*/
