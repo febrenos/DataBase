@@ -134,7 +134,7 @@ examples:
  CREATE DATABASE DBName;
  USE DBName;
  CREATE TABLE TableName1(
-     IdTableName1   INT PRIMARY KEY IDNTITY,
+     IdTableName1   INT PRIMARY KEY IDENTITY,
      Name           VARCHAR(200),
      Date           DATE NOT NULL,
      CPF            CHAR(11),
@@ -142,7 +142,7 @@ examples:
 );
 
 CRATE TABLE TableName2(
-     IdTableName2 INT PRIMARY KEY IDNTITY,
+     IdTableName2 INT PRIMARY KEY IDENTITY,
      IdTableName1 INT FOREIGN KEY REFERENCES TableName1(IdTableName1),
      Name VARCHAR(200)
 );
