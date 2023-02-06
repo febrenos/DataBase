@@ -1,4 +1,9 @@
 # DATA BASE
+
+- Trigger (gatilho de monitoramento)
+- Procedure
+- Cursor
+
 ## About DB
 Is usege for admnistrate informantions, is where informations are stored  
 Entidades,
