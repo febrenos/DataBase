@@ -71,3 +71,50 @@ BEGIN
     valorPorParcela := ( valorcompra * juros) / parcela;
     DBMS_OUTPUT.PUT_LINE('R$: '||valorPorParcela);
 END;
+
+
+/*LOOPS*/
+
+/*FOR*/
+DECLARE
+    i NUMBER;
+BEGIN
+    FOR i IN 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+
+/*WHILE*/
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    WHILE i <= 10 LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i + 1;
+    END LOOP;
+END;
+
+/*EXIT WHEN*/
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i + 1;
+        EXIT WHEN i > 10;
+    END LOOP;
+END;
+
+/*GOTO*/
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    <<meu loop>>
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i + 1;
+        IF i > 10 THEN
+            EXIT meu loop;
+        END IF;
+    END LOOP meu loop;
+END;
