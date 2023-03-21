@@ -1,6 +1,17 @@
-/*1*/
 SET SERVEROUT ON
 
+/*DEFINE*/
+DEFINE valor = 10;
+
+DECLARE
+    resultado NUMBER;
+BEGIN
+    resultado := &valor * 2;
+    DBMS_OUTPUT.PUT_LINE('O resultado é: ' || resultado);
+END;
+
+
+/*1*/
 DECLARE
     saldoAtual number(10,2) := 1302.00;
     saldoReajente number(10,2);
