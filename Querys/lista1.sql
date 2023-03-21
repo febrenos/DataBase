@@ -10,8 +10,6 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('salario atual - R$: '||saldoReajente);
 END;
 
-SET SERVEROUT ON
-
 /*2*/
 DECLARE
     valorReal number(10,2) := 45.00;
